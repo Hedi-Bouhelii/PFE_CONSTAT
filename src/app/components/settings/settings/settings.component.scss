@@ -1,0 +1,54 @@
+mat-form-field {
+    margin-right: 12px;
+  }
+  .card{
+    padding: 30px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.056);
+    background-color: #eaf3fa;
+    width: 500px;
+    
+}
+label{
+    color: #7499f1;
+    position: relative;
+    top: 7px;
+}
+input{
+    
+}
+::placeholder {
+    color: #7499f1;
+  }
+  
+  button{
+    margin: -15px;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fa9746;
+    border: none;
+}
+button:hover{
+    background-color: #7499f1;
+}
+.form-control{
+    background-color: transparent;
+    width: 100%;
+}
+h1{
+  color: #2b468b;
+  font-size: 45px;
+  text-align: center;
+  font-weight:bold;
+}
+::ng-deep .snack {
+  background-color: #7499f1 !important;
+  color: #eaf3fa; /* Replace with your desired background color */
+}
+form{
+  margin-top: 10px;
+}
+h1{
+  line-height: 49px;
+}

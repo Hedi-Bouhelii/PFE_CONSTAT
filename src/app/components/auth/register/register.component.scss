@@ -1,0 +1,118 @@
+h1{
+    color: #2b468b;
+    font-size: 45px;
+    text-align: center;
+    font-weight:bold;
+}
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+img{
+    position: relative;
+    left: 100px;
+    width: 963px;
+}
+label{
+    color: #7499f1;
+    position: relative;
+    top: 7px;
+}
+.selector{
+    position: relative;
+    top: 75px;
+    left: 195px;
+}
+.card{
+    width: auto;
+    margin-left: 175px;
+    padding: 30px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.056);
+    background-color: #eaf3fa;
+    align-self: center;
+}
+.client .row1{
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+}
+.card input{
+    padding: 7px;
+}
+.client .row1 select{
+    width: 194px;
+}
+ .client button{
+    margin: -15px;
+    width: 110px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fa9746;
+    border: none;
+}
+.client button:hover{
+    background-color: #7499f1;
+}
+.client  .row1 .form-control{
+    border-radius: 0;
+    border: none;
+    border-bottom:1px solid #7499f1;
+    background-color: transparent;
+    color: #7499f1;
+}
+::placeholder {
+    color: #7499f1;
+  }
+  .client .form-control:focus{
+    outline: none;
+    border: none;
+    box-shadow: 0 4px 2px -2px #7499f1;
+    border-bottom:1px solid #7499f1;
+}
+  /*
+
+Style Agence
+
+  */
+  .assurance .row1{
+    display: flex;
+    padding: 5px;
+    justify-content: space-around;
+}
+.assurance input{
+    padding: 7px;
+}
+.assurance .row1 select{
+    width: 194px;
+}
+ .assurance button{
+    margin: -15px;
+    width: 110px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fa9746;
+    border: none;
+}
+.assurance button:hover{
+    background-color: #7499f1;
+}
+.assurance  input{
+    border-radius: 0;
+    border: none;
+    border-bottom:1px solid #7499f1;
+    background-color: transparent;
+    color: #7499f1;
+    outline: none !important;
+}
+.assurance input:focus{
+    outline: none;
+    border: none;
+    box-shadow: 0 4px 2px -2px #7499f1;
+    border-bottom:1px solid #7499f1;
+}
+::ng-deep .snack {
+    background-color: #7499f1 !important;
+    color: #eaf3fa; /* Replace with your desired background color */
+  }

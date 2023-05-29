@@ -1,0 +1,93 @@
+<div class="alert w-100" *ngIf="!activated" [routerLink]='[{ outlets: { agenceBoard: ["profile"] } }]'>
+    Envoyez Votre carte pour activer votre compte
+</div>
+<button data-drawer-target="separator-sidebar" data-drawer-toggle="separator-sidebar" aria-controls="separator-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 white:text-gray-400 white:hover:bg-gray-700 white:focus:ring-gray-600">
+<span class="sr-only">Open sidebar</span>
+<svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
+</svg>
+</button>
+
+<aside  [ngStyle]="{ 'margin-top': !activated ? '55px' : '0' }" id="separator-sidebar" class="aside fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0" aria-label="Sidebar">
+    
+<div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 white:bg-gray-800">
+        <img src="../../../../assets/SIGA-01-1 (3).png" class="self-center text-xl font-semibold whitespace-nowrap h-6 mr-3 sm:h-7 " />
+    <ul class="space-y-2 font-medium">        
+        <li>
+            <a [routerLink]='[{ outlets: { agenceBoard: ["addExpert"] } }]' 
+            (click)="!activated ? $event.preventDefault() : null" [class.disabled]="!activated"
+            routerLinkActive="active"
+            class="flex items-center p-2 text-gray-900 rounded-lg white:text-white hover:bg-gray-100 white:hover:bg-gray-700">
+                <i class="w-6 h-6 text-gray-500 transition duration-75 white:text-gray-400 group-hover:text-gray-900 white:group-hover:text-white sidenav-link-icon far fa-users-medical"></i>
+                <span class="flex-1 ml-3 whitespace-nowrap">Ajouter Expert</span>
+            </a>
+        </li>
+
+        <li>
+            <a [routerLink]='[{ outlets: { agenceBoard: ["listConstat"] } }]' 
+            (click)="!activated ? $event.preventDefault() : null" [class.disabled]="!activated"
+            routerLinkActive="active"
+            class="flex items-center p-2 text-gray-900 rounded-lg white:text-white hover:bg-gray-100 white:hover:bg-gray-700">
+                <i class="w-6 h-6 text-gray-500 transition duration-75 white:text-gray-400 group-hover:text-gray-900 white:group-hover:text-white sidenav-link-icon far fa-copy"></i>
+                <span class="flex-1 ml-3 whitespace-nowrap">Liste Constats</span>
+            </a>
+        </li>
+
+        <li>
+            <a [routerLink]='[{ outlets: { agenceBoard: ["listExpert"] } }]' 
+            (click)="!activated ? $event.preventDefault() : null" [class.disabled]="!activated"
+            routerLinkActive="active"
+            class="flex items-center p-2 text-gray-900 rounded-lg white:text-white hover:bg-gray-100 white:hover:bg-gray-700">
+                <i class="w-6 h-6 text-gray-500 transition duration-75 white:text-gray-400 group-hover:text-gray-900 white:group-hover:text-white sidenav-link-icon far fa-user-tie"></i>
+                <span class="flex-1 ml-3 whitespace-nowrap">Liste Experts</span>
+            </a>
+        </li>
+        <li>
+            <a [routerLink]='[{ outlets: { agenceBoard: ["listAssure"] } }]' 
+            (click)="!activated ? $event.preventDefault() : null" [class.disabled]="!activated"
+            routerLinkActive="active"
+            class="flex items-center p-2 text-gray-900 rounded-lg white:text-white hover:bg-gray-100 white:hover:bg-gray-700">
+                <i class="w-6 h-6 text-gray-500 transition duration-75 white:text-gray-400 group-hover:text-gray-900 white:group-hover:text-white sidenav-link-icon fa-regular far fa-users"></i>
+                <span class="flex-1 ml-3 whitespace-nowrap">Liste Assurés</span>
+            </a>
+        </li>
+    </ul>
+    <ul class="pt-4 mt-4 space-y-2 font-medium border-t border-gray-200 white:border-gray-700">
+    <li>
+        <a [routerLink]='[{ outlets: { agenceBoard: ["profile"] } }]' 
+        routerLinkActive="active"
+        class="flex items-center p-2 text-gray-900 rounded-lg white:text-white hover:bg-gray-100 white:hover:bg-gray-700">
+            <i class="w-6 h-6 text-gray-500 transition duration-75 white:text-gray-400 group-hover:text-gray-900 white:group-hover:text-white sidenav-link-icon fa-regular far fa-user-circle"></i>
+            <span class="flex-1 ml-3 whitespace-nowrap">Profile</span>
+        </a>
+    </li>
+
+    <li>
+        <a [routerLink]='[{ outlets: { agenceBoard: ["setting"] } }]' 
+        routerLinkActive="active"
+        class="flex items-center p-2 text-gray-900 rounded-lg white:text-white hover:bg-gray-100 white:hover:bg-gray-700">
+            <i class="w-6 h-6 text-gray-500 transition duration-75 white:text-gray-400 group-hover:text-gray-900 white:group-hover:text-white sidenav-link-icon fa-regular fal fa-cogs"></i>
+            <span class="flex-1 ml-3 whitespace-nowrap">Parametres</span>
+        </a>
+    </li>
+
+    <li>
+        <a href (click)="logout()" class="flex items-center p-2 text-gray-900 rounded-lg white:text-white hover:bg-gray-100 white:hover:bg-gray-700">
+            <i class="w-6 h-6 text-gray-500 transition duration-75 white:text-gray-400 group-hover:text-gray-900 white:group-hover:text-white fa-regular far fa-sign-out-alt"></i>
+            <span class="flex-1 ml-3 whitespace-nowrap">Déconnecter</span>
+        </a>
+    </li>
+    </ul>
+</div>
+</aside>
+
+    <div class="p-4 sm:ml-64">
+        <router-outlet name="agenceBoard"></router-outlet>
+     </div>
+
+
+
+
+
+
+

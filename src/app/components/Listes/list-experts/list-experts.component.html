@@ -1,0 +1,42 @@
+<table class="agence p-4 sm:ml-64 w-2/3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg w-full text-sm text-left text-gray-500 white:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                Nom 
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Adresse
+            </th>
+            
+        
+            <th scope="col" class="px-6 py-3">
+                email
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Telephone
+            </th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-white border-b white:bg-gray-800 white:border-gray-700 hover:bg-gray-50 white:hover:bg-gray-600" *ngFor="let expert of experts">
+            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap white:text-white" >
+            {{expert.name}}                </th>
+            
+            <td class="px-6 py-4">
+                {{ expert.address}}
+            </td>
+           
+            <td class="px-6 py-4">
+                {{expert.email}}
+            </td>
+            <td class="px-6 py-4">
+                {{expert.tel}}
+            </td>
+           
+            
+        </tr>
+    </tbody>
+</table>
+

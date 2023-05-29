@@ -1,0 +1,71 @@
+<table class="agence p-4 sm:ml-64 w-2/3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg w-full text-sm text-left text-gray-500 white:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                Nom 
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Prenom 
+            </th>
+            <th scope="col" class="px-6 py-3">
+                email
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Adresse
+            </th>
+            <th scope="col" class="px-6 py-3">
+                CIN
+            </th>
+        
+            
+            <th scope="col" class="px-6 py-3">
+                Telephone
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Contrat
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-white border-b white:bg-gray-800 white:border-gray-700 hover:bg-gray-50 white:hover:bg-gray-600" *ngFor="let user of users">
+            
+            
+            <td class="px-6 py-4">
+                {{ user.lastName}}
+            </td>
+            <td  class="px-6 py-4 " >
+                {{user.firstName}}                
+            </td>
+            <td class="px-6 py-4">
+                {{user.email}}
+            </td>
+            <td class="px-6 py-4">
+                {{user.address}}
+            </td>
+
+            <td class="px-6 py-4">
+                {{user.cin}}
+            </td>
+            <td class="px-6 py-4">
+                {{user.tel}}
+            </td>
+            <td class="settings px-6 py-4">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button class="link" mat-menu-item>
+                        <i class="fas fa-trash"></i>
+                        <span>Supprimer Assuré</span>
+                    </button>
+                    <button (click)="openAccountSettings(user.id)" class="link" mat-menu-item>
+                        <i class="far fa-file-contract"></i>
+                        <span (click)="activate(user.id)" >Gérer Compte</span>
+                    </button>
+                </mat-menu>
+            </td>
+        </tr>
+    </tbody>
+</table>
+

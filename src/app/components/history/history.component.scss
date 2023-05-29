@@ -1,0 +1,27 @@
+.refused{
+    background-color: red;
+    width: 75px;
+    height: 35px;
+    border-radius:15px;
+}
+.accepted{
+    background-color: #00a67e;
+    width: 75px;
+    height: 35px;
+    border-radius:15px;
+
+}
+.accepted span{
+    text-align: center;
+    position: relative;
+    top: 7px;
+    left: 9px;
+    color: white;
+}
+.refused span{
+    text-align: center;
+    position: relative;
+    top: 7px;
+    left: 11px;
+    color: white;
+}

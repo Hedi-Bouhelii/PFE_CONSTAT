@@ -1,0 +1,56 @@
+ul li span{
+    color: #939ca9;
+    font-size: larger;
+    position: relative;
+    top: 15px;
+    transition: color 0.25s;
+}
+nav{
+    position: relative;
+    left: 75px;
+    bottom: 25px;
+}
+ul{
+    display: flex;
+    text-align: center;
+    margin-left: 150px;
+}
+ul li{
+    width: 80px;
+    height: 50px;
+}
+ul li:hover{
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ul li span:hover{
+    color: #2b468b;
+    text-decoration: none;
+}
+.active{
+    border-bottom:1px solid #2196f3 !important;
+    color: #2196f3;
+    text-decoration: none;
+}
+.row{
+    margin-left: 50px;
+}
+.img img{
+    position: relative;
+left: 75px;
+   width: 1037px;
+   height: 668px;
+   bottom: 25px;
+}
+.router{
+    position: relative;
+    left: 75px;
+}
+.auth{
+    position: relative;
+}
+.siga img{
+    width: 85px;
+    height: 45px;
+}

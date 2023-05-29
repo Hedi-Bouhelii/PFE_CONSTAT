@@ -1,0 +1,45 @@
+#second-page{
+    background-color: #AECDFB;
+    height: 650px;
+}
+
+.container-fluid{
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-container img{
+    width: 700px;
+    height: 100%;
+    margin-top: 50px;
+}
+
+
+.info-container{
+    margin-right: 15%;
+    margin-top: 170px;
+    width: 500px;
+}
+
+.info-container h1{
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 25px;
+    font-weight: 450;
+    text-align: center;
+    line-height: 35px;
+    color: white;
+}
+
+.info-container p{
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+button{
+   border-radius: 5px;
+   background-color: #6383E0;
+   color: white;
+   display: block;
+   margin: 0 auto;
+   width: 175px;
+}

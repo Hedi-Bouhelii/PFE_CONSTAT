@@ -1,0 +1,65 @@
+  <mat-stepper [linear]="false" #stepper>
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+    <mat-step >
+        <input
+        type="text"
+        class="form-control"
+        name="firstname"
+        [(ngModel)]="formAssure.firstname"
+        required
+        minlength="4"
+        maxlength="20"
+        #firstname="ngModel"
+        placeholder="Nom"
+        [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }"
+      />
+
+        <ng-template matStepLabel>Fill out your name</ng-template>
+        <input
+        type="text"
+        class="form-control"
+        name="firstname"
+        [(ngModel)]="formAssure.lastname"
+        required
+        minlength="4"
+        maxlength="20"
+        #firstname="ngModel"
+        placeholder="Nom"
+        [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }"
+      />
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      
+    </mat-step>
+    <mat-step  label="Fill out your address">
+      
+        <input
+        type="text"
+        class="form-control"
+        name="firstname"
+        [(ngModel)]="formAssure.age"
+        required
+        minlength="4"
+        maxlength="20"
+        #firstname="ngModel"
+        placeholder="Nom"
+        [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }"
+      />
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button (click)="onSubmit()" mat-button>Reset</button>
+      </div>
+    </mat-step>
+</form>
+  </mat-stepper>
+  

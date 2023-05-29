@@ -1,0 +1,67 @@
+#first-page{
+    height: 650px;
+    display: flex;
+    background-color: #EAF3FA;
+}
+
+.container{
+    margin-top:  15%;
+    margin-left: 7%;
+    display: flex;
+}
+.sideImage{
+    position: absolute;
+    top:-50px;
+    width: 70%;
+    left: 570px;
+}
+button{
+    border-radius: 5px;
+    background-color: #FA9646 !important;
+    color: white !important;
+    display: block;
+    margin: 0 auto;
+}
+.container h1{
+    line-height: 43px;
+    text-align: center;
+    color: #2B468B;
+    padding-bottom: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+}
+
+.container h3{
+    color: #FFFF;
+    padding-bottom: 10px;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 25px;
+    font-size: 20px;
+    padding-bottom: 60px;
+}
+
+
+.brn-container button{
+    margin-right: 50px;
+    border: 1px solid #FFFF;;
+    width: fit-content;
+    border-radius: 30px;
+    padding: 15px 50px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-family: Arial;
+    font-size: 20px;
+
+}
+
+.brn-container button:hover{
+    background: transparent;
+    border: 1px solid #FFFF;
+    color: #FFFF;
+}
+
+.scearch-btn{
+    background-color: #FFFF;
+    color: #042361 ;
+}

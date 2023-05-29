@@ -1,0 +1,79 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
+img{
+    position: relative;
+    left: 100px;
+    width: 963px;
+}
+
+.card{
+    width: auto;
+    margin-left: 175px;
+    padding: 30px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.056);
+    background-color: #eaf3fa;
+    align-self: center;
+    height:350px;
+}
+button{
+    margin: -15px;
+    width: 110px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fa9746;
+    border: none;
+}
+button:hover{
+    background-color: #7499f1;
+}
+h5{
+    margin-top: 5px;
+    text-align: center;
+}
+h5 span{
+    color: #7499f1;
+    
+}
+h5 span:hover{
+    cursor: pointer;
+}
+h1{
+    color: #2b468b;
+    font-size: 45px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+label{
+    color: #7499f1;
+    position: relative;
+    top: 7px;
+}
+input{
+    border-radius: 0;
+    border: none;
+    border-bottom:1px solid #7499f1;
+    background-color: transparent;
+    color: #7499f1;
+}
+::placeholder {
+    color: #7499f1;
+  }
+  span{
+    color: #2b468b;
+    font-size: 10px;
+  }
+  span:hover{
+    cursor: pointer;
+  }
+  ::ng-deep .snack {
+    background-color: #7499f1 !important;
+    color: #eaf3fa; /* Replace with your desired background color */
+  }
+  form{
+    margin-top: 25px;
+  }

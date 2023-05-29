@@ -1,0 +1,86 @@
+  <div class=" main container-fluid">
+    <div class=" expert">
+      <div class="col-6 card mt-40">
+        <h1>Créer Expert</h1>
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+            <div>
+                <div class="form-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="name"
+                    [(ngModel)]="form.name"
+                    required
+                    #name="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+                    placeholder="name"
+                />
+                <div class="invalid-feedback" *ngIf="name.errors && f.submitted">
+                    <div *ngIf="name.errors['required']">Nom est obligatoire</div>
+                </div>
+                </div>
+                <div class="form-group">
+                <input
+                    type="text"
+                    class="form-control"
+                    name="address"
+                    [(ngModel)]="form.address"
+                    required
+                    address
+                    #address="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+                    placeholder="address"
+                />
+                <div class="invalid-feedback" *ngIf="address.errors && f.submitted">
+                    <div *ngIf="address.errors['required']">Addresse est obligatoire</div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                <input
+                    type="number"
+                    class="form-control"
+                    name="tel"
+                    [(ngModel)]="form.tel"
+                    required
+                    tel
+                    #tel="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && tel.errors }"
+                    placeholder="Tel"
+                />
+                <div class="invalid-feedback" *ngIf="tel.errors && f.submitted">
+                    <div *ngIf="tel.errors['required']">Num tel est obligatoire</div>
+                </div>
+                </div>
+                <div class="form-group">
+                <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    [(ngModel)]="form.email"
+                    required
+                    email
+                    #email="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                    placeholder="Email"
+                />
+                <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                    <div *ngIf="email.errors['required']">Email est obligatoire</div>
+                    <div *ngIf="email.errors['email']">
+                    adresse email non validee
+                    </div>
+                </div>
+                </div>
+            </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block">Créer Expert</button>
+          </div>
+        </form>
+      </div>
+      <div class="img">
+        <img src="../../../assets/expert.jpg" alt="">
+      </div>
+    </div>      
+  </div>
+    

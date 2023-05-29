@@ -1,0 +1,19 @@
+<div *ngIf="!isAuthenticated">
+    <div class="nav-bar" data-aos="fade-zoom-in" [class.sticky-navbar]="scroll_postion" [ngClass]="{'animate__animated animate__fadeInDown':scroll_postion}">
+        <div class="container-fluid" >
+            <div class="logo-container"><img src="http://www.siga.tn/wp-content/uploads/2018/02/SIGA-01-1.png" alt="" class="logo"></div>      
+            <div class="link-container">
+                <ul>
+                    <li (click)="scrollTo('first-page')" routerLink="/first">Acceuil</li>
+                    <li (click)="scrollTo('second-page')" >A propos de nous</li>
+                    <li (click)="scrollTo('third-page')" >Contact</li>
+                    <li (click)="scrollTo('fourth-page')" >Agences</li>
+                </ul>
+            </div>
+            <div class="buttons space-x-4">
+                <button class="login" routerLink="/login" mat-raised-button>Connecter</button>
+                <button class="signup"routerLink="/register" mat-raised-button>Créer Compte</button>
+            </div>
+        </div>
+    </div>
+</div>

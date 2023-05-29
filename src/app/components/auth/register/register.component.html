@@ -1,0 +1,334 @@
+<mat-form-field class="selector w-96 mt-10">
+  <mat-label>Vous etes</mat-label>
+  <mat-select [(ngModel)]="selectedOption" name="role" id="role">
+    <mat-option value="Assure">Assuré</mat-option>
+    <mat-option value="Agence">Agence d'assurance</mat-option>
+  </mat-select>
+</mat-form-field>  
+
+<div  *ngIf="selectedOption !='' " class="main "> 
+    <div class="card card-container">
+        
+        <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmitAssure()" #f="ngForm" novalidate>
+            
+          <div *ngIf="selectedOption === 'Assure'" class="client">
+            <h1>S'inscrire</h1>
+            <div class="row1">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="firstname"
+                  [(ngModel)]="formAssure.firstname"
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  #firstname="ngModel"
+                  placeholder="Nom"
+                  [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="firstname.errors && f.submitted">
+                  <div *ngIf="firstname.errors['required']">First Name is required</div>
+                  <div *ngIf="firstname.errors['minlength']">
+                    First Name must be at least 4 characters
+                  </div>
+                  <div *ngIf="firstname.errors['maxlength']">
+                    First Name must be at most 20 characters
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="lastname"
+                  [(ngModel)]="formAssure.lastname"
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  #lastname="ngModel"
+                  placeholder="Prénom"
+                  [ngClass]="{ 'is-invalid': f.submitted && lastname.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="lastname.errors && f.submitted">
+                  <div *ngIf="lastname.errors['required']">Last Name is required</div>
+                  <div *ngIf="lastname.errors['minlength']">
+                    Last Name must be at least 4 characters
+                  </div>
+                  <div *ngIf="lastname.errors['maxlength']">
+                    Last Name must be at most 20 characters
+                  </div>
+                </div>
+              </div>
+            </div>  
+            <div class="row1">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="cin"
+                  [(ngModel)]="formAssure.cin"
+                  required
+                  minlength="8"
+                  maxlength="8"
+                  placeholder="CIN"
+                  #cin="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && cin.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="cin.errors && f.submitted">
+                  <div *ngIf="cin.errors['required']">cin is required</div>
+                  <div *ngIf="cin.errors['minlength']">
+                    CIN must be 8 numbers
+                  </div>
+                </div>
+              </div>
+            
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  [(ngModel)]="formAssure.email"
+                  required
+                  email
+                  placeholder="Email"
+                  #email="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                  <div *ngIf="email.errors['required']">Email is required</div>
+                  <div *ngIf="email.errors['email']">
+                    Email must be a valid email address
+                  </div>
+                </div>
+              </div>
+            </div>   
+            <div class="row1">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="address"
+                  [(ngModel)]="formAssure.address"
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Addresse"
+                  #address="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="address.errors && f.submitted">
+                  <div *ngIf="address.errors['required']">Last Name is required</div>
+                  <div *ngIf="address.errors['minlength']">
+                    Last Name must be at least 4 characters
+                  </div>
+                  <div *ngIf="address.errors['maxlength']">
+                    Last Name must be at most 20 characters
+                  </div>
+                </div>
+              </div>
+  
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="phone"
+                  [(ngModel)]="formAssure.phone"
+                  required
+                  placeholder="Num Tél"
+                  minlength="8"
+                  #phone="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && phone.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="phone.errors && f.submitted">
+                  <div *ngIf="phone.errors['required']">phone is required</div>
+                </div>
+              </div>
+            </div>
+            <div class="row1">
+              <div class="form-group">
+                <select class="form-control" name="agence" [(ngModel)]="formAssure.agence" placeholder="azeaze"  required #agence="ngModel" [ngClass]="{ 'is-invalid': f.submitted && agence.errors }">
+                  <option value="star">Star</option>
+                  <option value="mae">MAE</option>
+                  <option value="ftusa">Ftusa</option>
+                  <option value="lloyd">Lloyd</option>
+                  <option value="biat">Biat</option>
+                  <option value="amen">Amen</option>
+                  <option value="gat">GAT</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="agence.errors && f.submitted">
+                  <div *ngIf="agence.errors['required']">Password is required</div>
+                  <div *ngIf="agence.errors['minlength']">
+                    Password must be at least 8 characters
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  [(ngModel)]="formAssure.password"
+                  required
+                  minlength="8"
+                  #password="ngModel"
+                  placeholder="Mot de Passe"
+                  [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                  <div *ngIf="password.errors['required']">Password is required</div>
+                  <div *ngIf="password.errors['minlength']">
+                    Password must be at least 8 characters
+                  </div>
+                </div>
+              </div>
+            </div>  
+            <div class="form-group">
+              <button class="btn btn-primary btn-block mx-auto m-8">Créer</button>
+            </div>
+  
+            <div class="alert alert-warning" *ngIf="f.submitted && !isSignUpFailed">
+              Signup failed!<br />{{ errorMessage }}
+            </div>
+  
+          </div>  
+        </form>
+  
+  
+        <form  *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmitAssurance()" #f="ngForm" novalidate>
+            
+          <div *ngIf="selectedOption === 'Agence'" class="assurance">
+            <h1 class="mb-10">S'inscrire</h1>
+            <div class="row1">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  [(ngModel)]="formAssurance.name"
+                  required
+                
+                  maxlength="20"
+                  placeholder="Nom Agence"
+                  #name="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="name.errors && f.submitted">
+                  <div *ngIf="name.errors['required']">Nom de l'agence est obligatoire</div>
+                  
+                  <div *ngIf="name.errors['maxlength']">
+                    Nom de l'agencef  doit comporter au max 20 caractères
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  [(ngModel)]="formAssurance.email"
+                  required
+                  email
+                  placeholder="Email"
+                  #email="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                  <div *ngIf="email.errors['required']">Email est obligatoire</div>
+                  <div *ngIf="email.errors['email']">
+                    Donnez une adresse email valide
+                  </div>
+                </div>
+              </div>
+            </div>  
+            <div class="row1">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="tel"
+                  [(ngModel)]="formAssurance.tel"
+                  required
+                  placeholder="Num Tél"
+                  minlength="8"
+                  #tel="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && tel.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="tel.errors && f.submitted">
+                  <div *ngIf="tel.errors['required']">Numéro Tél est obligatoire</div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="matricule"
+                  placeholder="Matricule"
+                  [(ngModel)]="formAssurance.matricule"
+                  required
+                  #matricule="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && matricule.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="matricule.errors && f.submitted">
+                  <div *ngIf="matricule.errors['required']">Matricule est obligatoire</div>
+                </div>
+              </div>
+            </div>  
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="address"
+                  [(ngModel)]="formAssurance.address"
+                  required
+                  #address="ngModel"
+                  placeholder="Adresse"
+                  [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+                />
+                <div class="invalid-feedback" *ngIf="address.errors && f.submitted">
+                  <div *ngIf="address.errors['required']">address est obligatoire</div>
+                </div>
+              </div>
+  
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                [(ngModel)]="formAssurance.password"
+                required
+                placeholder="Mot de Passe"
+                minlength="8"
+                #password="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+              />
+              <div class="invalid-feedback" *ngIf="password.errors && f.submitted">
+                <div *ngIf="password.errors['required']">Mot de passe est obbligatooire</div>
+                <div *ngIf="password.errors['minlength']">
+                  Mot de passe doit comporter au moins 4 caractères
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-block">Créer</button>
+            </div>
+      
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              L'inscription a échoué !<br />{{ errorMessage }}
+            </div>
+          </div>  
+        </form>
+  
+    
+        <div class="alert alert-success" *ngIf="isSuccessful">
+          Votre inscription est réussie !
+        </div>
+  
+      </div>
+      <div class="mt-10 img">
+        <img class="mx-auto" src="../assets/10173988_8655.jpg" alt="">
+      </div>
+</div>
+    

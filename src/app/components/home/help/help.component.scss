@@ -1,0 +1,49 @@
+.main{
+position: relative;
+top: 110px;
+background-color: #EAF3FA;
+}
+
+svg{
+    width: 500px;
+    height: 500px;
+}
+.header{
+    display: flex;
+    justify-content: space-evenly;
+}
+h1{
+    text-align: center;
+    color: #293277;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 50px;
+
+}
+span{
+    color: #FA9646;
+}
+.desc{
+    position: relative;
+    top: 100px;
+    width: 500px;
+}
+hr{
+    color: #6383E0;
+}
+.desc1{
+    position: relative;
+    top: 150px;
+    width: 500px;
+}
+h2{
+    text-align: center;
+    color: #293277;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 50px;
+}
+.pic1 svg{
+    width: 450px;
+    height: 500px;
+}

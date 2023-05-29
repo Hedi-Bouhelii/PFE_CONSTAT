@@ -1,0 +1,28 @@
+.settings{
+
+}
+mat-icon{
+    color: #7499f1;
+}
+span{
+    color: rgb(210, 210, 210);
+    transition: color 0.25s;
+}
+i{
+    color: rgb(210, 210, 210);
+    margin-right: 5px;
+    transition: color 0.25s;
+    font-size: 17px;
+}
+
+mat-menu{
+    color: rgb(210, 210, 210);
+}
+.link:hover{
+    i{
+        color: #7499f1;
+    }
+    span{
+        color: #7499f1;
+    }
+}

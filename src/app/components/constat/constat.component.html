@@ -1,0 +1,333 @@
+<button mat-raised-button (click)="generatePDF()" >Telecharger PDF <i class="fas fa-file-download"></i></button>
+<div id="pdfContent">
+<table class="bordered-table p-4 sm:ml-64 w-2/4 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg w-full text-sm text-left text-gray-500 white:text-gray-400">
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <tr>
+      <th scope="col" >
+          id 
+      </th>
+
+      <th scope="col" >
+          {{user.id}}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col" >
+          Date de Création
+      </th>
+
+      <th scope="col" >
+          {{formattedDate}}
+      </th>
+    </tr>
+    <tr>
+      <th scope="col" >
+          Cree Par
+      </th>
+      <th scope="col" >
+        {{user.firstName}} {{user.lastName}}
+      </th>
+    </tr>
+  </thead>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <tr>
+        <th scope="col" >
+            Intervenants 
+        </th>
+    </tr>
+  </thead>
+  <tbody>
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+      <tr>
+        <th scope="col" >
+            Vehicule 
+        </th>
+        <th scope="col" >
+          Humain 
+          
+        </th>
+        <th scope="col" >
+        Degats 
+        </th>
+        <th scope="col" >
+          Signature 
+        </th>
+      </tr>
+    </thead>  
+    <thead>
+      <th scope="col">
+        <table class="vehicule">
+          <thead>
+            <tr>
+              <th scope="col" >
+                matricule 
+              </th>
+              <th scope="col" >
+                num VIN 
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <td scope="col">
+              25635500
+            </td>
+            <td scope="col">
+              25635555
+            </td>
+          </tbody>
+        </table>  
+      </th>
+
+      <th scope="col">
+      </th>
+
+      <th scope="col">
+        <table class="degats">
+          <thead>
+            <tr>
+              <th scope="col" >
+                Degats Physique 
+              </th>
+              <th scope="col" >
+                Degats Materiaux 
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <td scope="col">
+              <thead>
+                <tr>
+                  <th scope="col" >
+                    Fracture 
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" >
+                    Choc Mentale 
+                  </th>
+                </tr>
+              </thead>
+            </td>
+            <td scope="col">
+              <thead>
+                <tr>
+                  <th scope="col" >
+                    Parachoc 
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" >
+                    Portes 
+                  </th>
+                </tr>
+              </thead>
+            </td>
+          </tbody>
+        </table>  
+      </th>
+
+
+
+      <th scope="col">
+        <h1>Votre SIgnature</h1>
+      </th>
+
+
+      
+    </thead>
+    <thead>
+      <th scope="col">
+      </th>
+      <th scope="col">
+        <table class="vehicule">
+          <thead>
+            <tr>
+              <th scope="col" >
+                Nom Complet 
+              </th>
+              <th scope="col" >
+                CIN
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <td scope="col">
+              Hedi Bouheli
+            </td>
+            <td scope="col">
+              07244927
+            </td>
+          </tbody>
+        </table>  
+        
+      </th>
+
+
+      <th scope="col">
+        <table class="degats">
+          <thead>
+            <tr>
+              <th scope="col" >
+                Degats Physique 
+              </th>
+              <th scope="col" >
+                Degats Materiaux 
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <td scope="col">
+              <thead>
+                <tr>
+                  <th scope="col" >
+                    Fracture 
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" >
+                    Choc Mentale 
+                  </th>
+                </tr>
+              </thead>
+            </td>
+            <td scope="col">
+              <thead>
+                <tr>
+                  <th scope="col" >
+                    Parachoc 
+                  </th>
+                </tr>
+                <tr>
+                  <th scope="col" >
+                    Portes 
+                  </th>
+                </tr>
+              </thead>
+            </td>
+          </tbody>
+        </table>  
+      </th>
+
+
+      <th scope="col">
+        <h1>Votre SIgnature</h1>
+      </th>
+    </thead>
+  </tbody>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <tr>
+        <th scope="col" >
+            Emplacement 
+        </th>
+    </tr>
+  </thead>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <th>
+      <tr>
+        Ville
+      </tr>
+    </th>
+    <th>
+      <tr>
+        Marsa
+      </tr>
+    </th>
+  </thead>
+
+
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <th>
+      <tr>
+        Direction
+      </tr>
+    </th>
+    <th>
+      <tr>
+        Kram
+      </tr>
+    </th>
+  </thead>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <tr>
+        <th scope="col" >
+            Temoins 
+        </th>
+    </tr>
+  </thead>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <th>
+      <tr>
+        Nom Complet
+      </tr>
+    </th>
+    <th>
+      <tr>
+        Adresse
+      </tr>
+    </th>
+    <th>
+      <tr>
+        Tel
+      </tr>
+    </th>
+    
+  </thead>
+
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <th>
+      <tr>
+        Aziz Hamrouni
+      </tr>
+    </th>
+    <th>
+      <tr>
+        Marsa
+      </tr>
+    </th>
+    <th>
+      <tr>
+        55566950
+      </tr>
+    </th>
+    
+  </thead>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <th>
+      <tr>
+        Mohamed Bousnina
+      </tr>
+    </th>
+    <th>
+      <tr>
+        Marsa
+      </tr>
+    </th>
+    <th>
+      <tr>
+        55566950
+      </tr>
+    </th>
+    
+  </thead>
+  <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+    <th>
+      <tr>
+      Aziz hammami
+      </tr>
+    </th>
+    <th>
+      <tr>
+        Marsa
+      </tr>
+    </th>
+    <th>
+      <tr>
+        55566950
+      </tr>
+    </th>
+    
+  </thead>
+
+</table>
+</div>  
+<router-outlet name="userBoard"></router-outlet>

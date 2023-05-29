@@ -1,0 +1,44 @@
+.card{
+    padding: 30px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.056);
+    background-color: #eaf3fa;
+    margin-top: 75px;
+}
+button{
+    margin: -15px;
+    width: 110px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fa9746;
+    border: none;
+}
+button:hover{
+    background-color: #7499f1;
+}
+label{
+    color: #7499f1;
+    position: relative;
+    top: 7px;
+}
+input{
+    border-radius: 0;
+    border: none;
+    border-bottom:1px solid #7499f1;
+    background-color: transparent;
+    color: #7499f1;
+}
+input:focus{
+    outline: none;
+    border: none;
+    box-shadow: 0 4px 2px -2px #7499f1;
+    border-bottom:1px solid #7499f1;
+    background-color: transparent;
+}
+::placeholder {
+    color: #7499f1;
+  }
+  ::ng-deep .snack {
+    background-color: #7499f1 !important;
+    color: #eaf3fa; /* Replace with your desired background color */
+  }

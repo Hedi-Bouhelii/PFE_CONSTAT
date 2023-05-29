@@ -1,0 +1,298 @@
+<mat-stepper linear orientation="vertical">
+  <form name="form" (ngSubmit)="(f.form.valid)" #f="ngForm" novalidate>
+    <!--Intervenants-->
+    <mat-step label="Intervenants">
+      <ng-template matStepLabel>Intervenants</ng-template>
+      <div class="intervenants">
+        <div class="car">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Vehicule<span><i class="far fa-car"></i></span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div
+              class="vehicule"
+              *ngFor="let vehicule of Vehicules; let i = index">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="matricule{{ i }}"
+                  value="250 tunis 25"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Matricule Vehicule{{ i }}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="numVIN{{ i }}"
+                  value="8754218254"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Numero VIN{{ i }}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="DegatsMt"
+                  value="Vitres , Portes , pareChoc"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Numero VIN{{ i }}"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="email"
+                  value="ahmedAbidi@gmail.com"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Numero VIN{{ i }}"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="DegatsPH"
+                  value="Fractures et os cassés"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Numero VIN{{ i }}"
+                />
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </div>
+        <div class="person">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Personne
+                <span><i class="far fa-walking"></i></span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="vehicule" *ngFor="let person of Persons; let j = index">
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="cin{{ j }}"
+                  value="07244927"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="CIN{{ j }}"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  
+                  class="form-control"
+                  name="nomComplet"
+                  value="hedi bouheli"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Nom Complet {{ j }}"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="email"
+                  value="bouhelii.hedi@gmail.com"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="email
+                  "
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="DegatsPhys"
+                  value="Blessures internes, Amputations"
+                  disabled
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Nom Complet {{ j }}"
+                />
+              </div>
+            </div>
+          </mat-expansion-panel>
+        </div>
+      </div>
+      <div>
+        <button mat-button matStepperPrevious>Precedent</button>
+        <button mat-button matStepperNext>Suivant</button>
+      </div>
+    </mat-step>
+    <!--Emplacements-->
+    <mat-step>
+      <ng-template matStepLabel>Emplacement</ng-template>
+      <div class="card mx-auto" *ngFor="let localisation of Location">
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="ville"
+            value="Ben arous"
+            disabled
+            minlength="4"
+            maxlength="20"
+            placeholder="Ville"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            name="addresse"
+            value="Rue monji slim"
+            disabled
+            minlength="4"
+            maxlength="20"
+            placeholder="Addresse"
+          />
+        </div>
+        <div class="direction">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="debDirection"
+              value="Tunis"
+              disabled
+              minlength="4"
+              maxlength="20"
+              placeholder="Venant de"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="finDirection"
+              value="Mhamdya"
+              disabled
+              minlength="4"
+              maxlength="20"
+              placeholder="Allant vers"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <button mat-raised-button matStepperPrevious>Précédent</button>
+        <button mat-raised-button matStepperNext>Suivant</button>
+      </div>
+    </mat-step>
+    <!--Degats-->
+    <!--Temoins-->
+    <mat-step>
+      <ng-template matStepLabel>Temoins</ng-template>
+      <div class="card mx-auto">
+        <div class="temoin" *ngFor="let temoin of Temoins; let i = index">
+          <div class="header">
+            <h3>Temoin numero {{ i }}</h3>
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="nom temoins"
+              value="Aziz Hmarouni"
+              disabled
+              minlength="4"
+              maxlength="20"
+              placeholder="Nom Complet du temoin"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="addresse"
+              value="Ben arous"
+              disabled
+              minlength="4"
+              maxlength="20"
+              placeholder="Addresse Temoin"
+            />
+          </div>
+          <div class="direction">
+            <div class="form-group">
+              <input
+                type="number"
+                class="form-control"
+                name="telTemoins"
+                value="55566950"
+                disabled
+                minlength="4"
+                maxlength="20"
+                placeholder="Téléphone Temoin"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        
+        <button mat-raised-button matStepperPrevious>Précédent</button>
+        <button mat-raised-button matStepperNext>Suivant</button>
+      </div>
+    </mat-step>
+    
+    <mat-step>
+      <ng-template matStepLabel>
+        Valider Constat</ng-template>
+      <div>
+        <div class="card">
+          <textarea name="" id="" cols="30" rows="10" placeholder="Note"></textarea>
+          <mat-form-field>
+            <mat-label>Montant a rembbourser</mat-label>
+            <input type="text" matInput>
+          </mat-form-field>
+          <button mat-raised-button (click)="openSnack()"> Envoyer</button>
+        </div>
+        <!-- <button mat-raised-button (click)="openExpertLis()">confirmer</button>
+        <button mat-raised-button matStepperPrevious>Rejeter</button> -->
+      </div>
+      <div class="sendExpert" *ngIf="confirmed">
+        <button mat-raised-button ></button>
+      </div>
+    </mat-step>
+    <!-- <mat-step>
+      <ng-template matStepLabel
+        >Envoyer vers les autres intervenants</ng-template>
+      <div>
+        <button mat-raised-button (click)="openExpertLis()">Envoyer</button>
+        <button mat-raised-button matStepperPrevious>Precedent</button>
+      </div>
+    </mat-step> -->
+
+  </form>
+</mat-stepper>
+

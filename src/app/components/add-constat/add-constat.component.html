@@ -1,0 +1,396 @@
+  <mat-stepper   linear orientation="vertical">
+    <form  name="form" (ngSubmit)="f.form.valid " #f="ngForm" novalidate >
+      <!--Verification du contrat-->
+      <mat-step>
+        <ng-template matStepLabel>Verification du contrat</ng-template>
+        <div class="mx-auto card">
+          <div class="form-group">
+            <input
+            type="text"
+            class="form-control"
+            name="refContrat"
+            [(ngModel)]="formAccident.refContrat"
+            required
+            minlength="4"
+            maxlength="20"
+            #refContrat="ngModel"
+            placeholder="Reference Contrat"
+            [ngClass]="{ 'is-invalid': refContrat.invalid && (refContrat.dirty || refContrat.touched) }"
+            />
+            <div class="invalid-feedback" *ngIf="refContrat.errors && f.submitted">
+              <div *ngIf="refContrat.errors['required']">matricule is required</div>
+              <div *ngIf="refContrat.errors['minlength']">
+                matricule must be at least 4 characters
+              </div>
+              <div *ngIf="refContrat.errors['maxlength']">
+                matricule must be at most 20 characters
+              </div>
+            </div>
+          </div>
+          <button mat-raised-button (click)="verifContract()">Verifier</button>
+        </div>
+       
+      </mat-step>
+        <!--Intervenants-->
+    <mat-step  label="Intervenants"> 
+      <ng-template matStepLabel>Intervenants</ng-template>
+      <div class="intervenants" >
+        <div class="car">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Vehicule<span><i class="far fa-car"></i></span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="vehicule" *ngFor="let vehicule of Vehicules,let i=index ">
+              <div class="header">
+                <h3>Vehicule {{i*1+1}}</h3>
+                <span (click)="deleteCarInfo(i)"><i class="fas fa-trash"></i></span> 
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"           
+                  class="form-control"
+                  name="matricule{{i}}"
+                  [(ngModel)]="Vehicules[i].matricule"
+                  ngModel
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Matricule Vehicule"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="numVIN{{i}}"
+                  [(ngModel)]="Vehicules[i].numVIN"
+                  ngModel
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Numero VIN"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="email{{i}}"
+                  [(ngModel)]="Vehicules[i].email"
+                  ngModel
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+            <button mat-raised-button (click)="addCarInfo()">Ajouter Vehicule</button>
+          </mat-expansion-panel>
+        </div>
+        <div class="person">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Personne
+                <span><i class="far fa-walking"></i></span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="vehicule" *ngFor="let person of Persons,let j=index ">
+              <div class="header">
+                <h3>Personne {{j*1+1}}</h3>
+                <span (click)="deletePersonInfo(j)"><i class="fas fa-trash"></i></span> 
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  ngModel
+                  class="form-control"
+                  name="cin{{j}}"
+                  [(ngModel)]="Persons[j].CIN"
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="CIN"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  ngModel
+                  class="form-control"
+                  name="nomComplet{{j}}"
+                  [(ngModel)]="Persons[j].nomComplet"
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Nom Complet "
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  ngModel
+                  class="form-control"
+                  name="email{{j}}"
+                  [(ngModel)]="Persons[j].email"
+                  required
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Email"
+                />
+              </div>
+
+            </div>
+            <button mat-raised-button (click)="addPersonInfo()">Ajouter Personne</button>
+          </mat-expansion-panel>
+        </div>  
+      </div>  
+      <div>
+        <button mat-button matStepperPrevious>Precedent</button>
+        <button mat-button matStepperNext>Suivant</button>
+      </div>
+    </mat-step>
+      <!--Emplacements-->
+    <mat-step>
+      <ng-template matStepLabel>Emplacement</ng-template>
+        <div class="card mx-auto" *ngFor="let localisation of Location">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="ville" 
+              [(ngModel)]="localisation.ville"
+              required
+              minlength="4"
+              maxlength="20"
+              ngModel
+              placeholder="Ville"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"                         
+              class="form-control"
+              name="addresse"
+              [(ngModel)]="localisation.adresse"
+              required
+              minlength="4"
+              maxlength="20"
+              placeholder="Addresse"
+            />
+          </div>
+          
+          <div class="direction">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="debDirection"
+                [(ngModel)]="localisation.debDirection"
+                required 
+                minlength="4"
+                maxlength="20"
+                ngModel
+                placeholder="Venant de"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="finDirection"
+                [(ngModel)]="localisation.finDirection"
+                ngModel
+                required
+                minlength="4"
+                maxlength="20"
+                placeholder="Allant vers"
+              />
+            </div>
+          </div>
+        </div>
+      <div>
+        <button mat-raised-button matStepperPrevious>Précédent</button>
+        <button  mat-raised-button matStepperNext>Suivant</button>
+      </div>
+    </mat-step>
+    <!--Degats-->
+    <mat-step  label="Degats"> 
+      <ng-template matStepLabel>Les Degats</ng-template>
+      <div class="degats " >
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>Degats </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="material" *ngFor="let vehicule of Vehicules,let i = index">
+            <mat-expansion-panel hideToggle >
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h3><span><i class="far fa-car-crash"></i></span>{{Vehicules[i].matricule}}</h3> 
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+                <div class="form-group">
+                  <mat-select  class="form-control" name="degatMateriel{{i}}" required [(ngModel)]="formAccident[i].degatMateriaux" multiple>
+                    <mat-option *ngFor="let typeDegatMt of degatsMateriaux" [value]="typeDegatMt">{{typeDegatMt}}</mat-option>
+                    <mat-option value="autre">Autre</mat-option>
+                  </mat-select>
+                </div>
+                  <textarea *ngIf="formAccident.degatMateriaux.includes('autre')"
+                    type="text"
+                    class="form-control"
+                    name="descrDegat{{i}}"
+                    [(ngModel)]="formAccident[i].descrDegatMT"
+                    required
+                    placeholder="Autre Degat"
+                    >
+                  </textarea>
+                <mat-checkbox name="check{{i}}" [(ngModel)]="formAccident[i].addPhysicalDamage" color="primary"> Y a-t-il des blessures physiques ?</mat-checkbox>
+                <mat-select *ngIf="formAccident.addPhysicalDamage"  class="form-control" name="agence" [(ngModel)]="formAccident.additionalDegatPhysique" required multiple>
+                <mat-option *ngFor="let typeDegatPh of additionalDegatsPhysique" [value]="typeDegatPh">{{typeDegatPh}}</mat-option>
+                <mat-option value="autre">Autre</mat-option>
+              </mat-select>
+
+              <div *ngIf="formAccident.additionalDegatPhysique.includes('autre')" class="form-group">
+                <textarea
+                  type="text"
+                  class="form-control"
+                  name="descrDegat{{i}}"
+                  [(ngModel)]="formAccident[i].addDescrDegatPhy"
+                  required
+                  placeholder="Autre Degat">
+                </textarea>
+              </div>
+            </mat-expansion-panel>
+          </div>
+          <!--kjkhjghgjkljlghhfgxcghjk-->
+          <div class="physique" *ngFor="let person of Persons,let i=index">
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <h3><span><i class="far fa-user-injured"></i></span>{{person.nomComplet}}</h3>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+                <div class="form-group">
+                  <mat-select  class="form-control" name="degatPhysique{{i}}" [(ngModel)]="formAccident[i].degatPhysique" required
+                    #degatMateriel="ngModel" [ngClass]="{ 'is-invalid': f.submitted && degatMateriel.errors }" multiple>
+                    <mat-option *ngFor="let typeDegatPh of degatsPhysique" [value]="typeDegatPh">{{typeDegatPh}}</mat-option>
+                    <mat-option value="autre">Autre</mat-option>
+                  </mat-select>
+                </div>
+
+                <div *ngIf="formAccident.degatPhysique.includes('autre')" class="form-group">
+                  <textarea
+                    type="text"
+                    class="form-control"
+                    name="descrDegatPH{{i}}"
+                    [(ngModel)]="formAccident[i].descrDegatPhy"
+                    required
+                    
+                    >
+                  </textarea>
+                </div>
+            </mat-expansion-panel>
+          </div>
+  
+        </mat-expansion-panel>
+      </div>  
+      <div>
+        <button mat-raised-button matStepperPrevious>Precedent</button>
+        <button mat-raised-button matStepperNext>Suivant</button>
+      </div>
+    </mat-step>
+    <!--Temoins-->
+    <mat-step>
+      <ng-template matStepLabel>Temoins</ng-template>
+        <div class="card mx-auto" >
+          <div class="temoin" *ngFor="let temoin of Temoins, let i = index">
+            <div class="header">
+              <h3>Temoin numero {{i}}</h3> <span><i (click)="deleteTemoinInfo(i)" class="fas fa-trash"></i></span>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                name="nom temoins" 
+                [(ngModel)]="temoin.nomComplet"
+                ngModel
+                required
+                minlength="4"
+                maxlength="20"
+                placeholder="Nom Complet du temoin"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"           
+                class="form-control"
+                name="addresse"
+                [(ngModel)]="temoin.adresse"
+                ngModel
+                required
+                minlength="4"
+                maxlength="20"
+                placeholder="Addresse Temoin"
+              />
+            </div>
+            <div class="direction">
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  name="debDirection"
+                  [(ngModel)]="temoin.tel"
+                  required
+                  ngModel
+                  minlength="4"
+                  maxlength="20"
+                  placeholder="Téléphone Temoin"
+                />
+              </div>
+            </div>
+          </div> 
+          <button mat-raised-button (click)="addTemoinInfo()">Ajouter Temoin</button> 
+        </div>
+      <div>
+        <button mat-raised-button matStepperPrevious>Précédent</button>
+        <button  mat-raised-button matStepperNext>Suivant</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Signature</ng-template>
+      <div>
+        <div class="signature">
+          <h3>Signature 1</h3>
+          <div class="canvas1">
+            
+            <div></div>
+            <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/XXXTentacion_signature.svg/1206px-XXXTentacion_signature.svg.png" alt=""> -->
+            <button mat-raised-button>Effacer</button>
+          </div>
+          <h3>Signature 2 </h3>
+          <div class="canvas">
+            
+            <div></div>
+            <!-- <img src="https://static.cdn.wisestamp.com/wp-content/uploads/2020/08/Michael-Jordan-personal-autograph.png" alt=""> -->
+            <button mat-raised-button>Effacer</button>
+          </div>
+        </div>
+        <button mat-raised-button >Envoyer</button>
+        <button mat-raised-button matStepperPrevious>Precedent</button>
+      </div>
+  </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Envoyer vers les autres intervenants</ng-template>
+        <div>
+          <button mat-raised-button (click)=" createConstat()">Envoyer</button>
+          <button mat-raised-button matStepperPrevious>Precedent</button>
+        </div>
+    </mat-step>
+  </form>
+  </mat-stepper>
+  

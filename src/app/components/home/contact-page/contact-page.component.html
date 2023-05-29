@@ -1,0 +1,21 @@
+<section id="third-page">
+    <div class="container-fluid">
+        <div class="submit-container">
+            <h1 class="mx-auto">Contactez-Nous</h1>
+            <input type="text" placeholder="Nom Complet" [(ngModel)]="contact.nomComplet">
+            <input type="email" name="" id="" placeholder="Email" [(ngModel)]="contact.email">
+            <textarea name="" id="" cols="30" rows="7" placeholder="Votre message" [(ngModel)]="contact.message"></textarea>
+            <button mat-raised-button class="submit-btn" (click)="send()">Envoyer</button>
+        </div>
+        <div class="info-container" data-aos="fade-up">
+            <img src="../../../../assets/contact.svg" alt="">
+        </div>
+    </div>
+    <div class="social-media-container">
+        <div class="fonts space-x-9">
+            <i class="fab fa-facebook-square"></i>
+            <i class="far fa-envelope"></i>
+            <i class="far fa-phone"></i>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,20 @@
+<div class=" main container-fluid">
+    <div class=" message">
+        <div class="col-6 card mt-40">
+            <mat-expansion-panel hideToggle *ngFor="let contact of contacts, let i=index">
+                    <mat-expansion-panel-header >
+                        <mat-panel-title>
+                        Nom Complet {{i}} : {{contact.nomComplet}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            email {{i}} :{{contact.email}}
+                            
+                        </mat-panel-description>
+                        <button mat-raised-button color="warn" (click)="delete(contact.id,i)" >delete</button>
+                    </mat-expansion-panel-header>
+                        <textarea readonly>{{contact.message}}</textarea>
+                </mat-expansion-panel>
+        </div>
+    </div>
+</div>      
+    

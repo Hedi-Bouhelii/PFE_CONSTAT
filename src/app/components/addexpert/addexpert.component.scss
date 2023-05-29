@@ -1,0 +1,56 @@
+h1{
+    color: #2b468b;
+    font-size: 45px;
+    text-align: center;
+    font-weight:bold;
+}
+.card{
+    padding: 30px;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.056);
+    background-color: #eaf3fa;
+    height: 350px;
+}
+label{
+    color: #7499f1;
+    position: relative;
+    top: 7px;
+}
+input{
+    border: none;
+    border-bottom: 1px solid #7499f1;
+    border-radius: 0;
+}
+input:focus{
+    box-shadow: none;
+    box-shadow: 0 4px 2px -2px #7499f1;
+}
+::placeholder {
+    color: #7499f1;
+  }
+  
+  button{
+    margin: -15px;
+    width: 170px;
+    display: block;
+    margin: 0 auto;
+    background-color: #fa9746;
+    border: none;
+}
+button:hover{
+    background-color: #7499f1;
+}
+.form-control{
+    background-color: transparent;
+    width: 100%;
+}
+img{
+    height: 600px;
+    position: relative;
+    left: 75px;
+   
+}
+.expert{
+    display: flex;
+    flex-direction: row;
+}

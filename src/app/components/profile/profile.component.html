@@ -1,0 +1,476 @@
+    
+     <div *ngIf="role ==='AGENCE'" class="mx-auto avatar flex items-center justify-center mt-10 w-40 h-40 rounded-full text-8xl uppercase bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-200">
+        {{ agence.name.charAt(0) }}
+    </div>
+    <div *ngIf="role ==='ASSURE'" class="mx-auto avatar flex items-center justify-center w-60 h-60 rounded-full text-8xl uppercase bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-200">
+        {{ user.firstName.charAt(0) }}
+    </div>
+    <div *ngIf="role ==='EXPERT'" class="mx-auto avatar flex items-center justify-center w-60 h-60 rounded-full text-8xl uppercase bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-200">
+        {{ expert.name.charAt(0) }}
+    </div>
+    <div *ngIf="role ==='ADMIN'" class="mx-auto avatar flex items-center justify-center w-60 h-60 rounded-full text-8xl uppercase bg-gray-200 text-gray-600 dark:bg-gray-700 dark:text-gray-200">
+        {{ adminFullName.charAt(0) }}
+    </div>
+    
+<div class="main mx-auto  p-4 sm:ml-64 ">
+    <div class="form">
+        <div class="card card-container">
+            <h1 ></h1>
+            <form  name="form" (ngSubmit)=" onSubmit" #f="ngForm" novalidate>
+                <div *ngIf="role ==='ASSURE'"  class="client">
+                <div class="row1">
+                    <div class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-user"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="firstname"
+                            value=id
+                            [(ngModel)]="user.firstName"
+                            required
+                            readonly
+                            minlength="4"
+                            maxlength="20"
+                            #firstname="ngModel"
+                            placeholder="Nom"
+                            [ngClass]="{ 'is-invalid': f.submitted && firstname.errors }"
+                        />
+                    </div>
+
+                    <div  class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-user"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="lastname"
+                            [(ngModel)]="user.lastName"
+                            required
+                            minlength="4"
+                            maxlength="20"
+                            #lastname="ngModel"
+                            placeholder="Prénom"
+                            [ngClass]="{ 'is-invalid': f.submitted && lastname.errors }"
+                        />
+                    <div class="invalid-feedback" *ngIf="lastname.errors && f.submitted">
+                        <div *ngIf="lastname.errors['required']">Last Name is required</div>
+                        <div *ngIf="lastname.errors['minlength']">
+                        Last Name must be at least 4 characters
+                        </div>
+                        <div *ngIf="lastname.errors['maxlength']">
+                        Last Name must be at most 20 characters
+                        </div>
+                    </div>
+                    </div>
+                </div>  
+                
+                    <div  class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="fal fa-id-card"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="cin"
+                            [(ngModel)]="user.cin"
+                            required
+                            minlength="8"
+                            maxlength="8"
+                            placeholder="CIN"
+                            #cin="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && cin.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="cin.errors && f.submitted">
+                            <div *ngIf="cin.errors['required']">cin is required</div>
+                            <div *ngIf="cin.errors['minlength']">
+                            CIN must be 8 numbers
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="row1">
+                    <div class="form-group flex" >
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-envelope"></i>
+                        </span>
+                        <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            [(ngModel)]="user.email"
+                            required
+                            email
+                            placeholder="Email"
+                            #email="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                            <div *ngIf="email.errors['required']">Email is required</div>
+                            <div *ngIf="email.errors['email']">
+                            Email must be a valid email address
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-map-marked-alt"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="address"
+                            [(ngModel)]="user.address"
+                            required
+                            minlength="4"
+                            maxlength="20"
+                            placeholder="Addresse"
+                            #address="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="address.errors && f.submitted">
+                            <div *ngIf="address.errors['required']">Last Name is required</div>
+                            <div *ngIf="address.errors['minlength']">
+                            Last Name must be at least 4 characters
+                            </div>
+                            <div *ngIf="address.errors['maxlength']">
+                            Last Name must be at most 20 characters
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="row1">
+                        <div class="form-group flex">
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-phone-alt"></i>
+                            </span>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="phone"
+                                [(ngModel)]="user.tel"
+                                required
+                                placeholder="Num Tél"
+                                minlength="8"
+                                #phone="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && phone.errors }"
+                            />
+                            <div class="invalid-feedback" *ngIf="phone.errors && f.submitted">
+                                <div *ngIf="phone.errors['required']">phone is required</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group flex">
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-building"></i>
+                            </span>
+                            <input type="text"
+                            class="form-control"
+                            name="agence"
+                            [(ngModel)]="user.agence"
+                            required
+                            placeholder="Nom agence"
+                            #agence="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && agence.errors }"
+                            >
+                        </div>
+                    </div>   
+                </div>  
+                <!--Form Agence-->
+                <div *ngIf="role ==='AGENCE'" class="assurance">
+                <div class="row1">
+                    <div class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-user"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="name"
+                            [(ngModel)]="agence.name"
+                            required
+                            minlength="4"
+                            maxlength="20"
+                            placeholder="Nom Agence"
+                            #name="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="name.errors && f.submitted">
+                            <div *ngIf="name.errors['required']">Nom de l'agence est obligatoire</div>
+                            <div *ngIf="name.errors['minlength']">
+                            Le prénom doit comporter au moins 4 caractères
+                            </div>
+                            <div *ngIf="name.errors['maxlength']">
+                            Le prénom doit comporter au max 20 caractères
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-phone-alt"></i>
+                        </span> 
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="tel"
+                            [(ngModel)]="form.tel"
+                            required
+                            placeholder={{agence.tel}}
+                            minlength="8"
+                            #tel="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && tel.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="tel.errors && f.submitted">
+                            <div *ngIf="tel.errors['required']">Numéro Tél est obligatoire</div>
+                        </div>
+                        </div>
+                </div>  
+
+                <div class="form-group flex">
+                    <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                        <i class="far fa-envelope"></i>
+                    </span>
+                    <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        [(ngModel)]="form.email"
+                        required
+                        email
+                        placeholder={{agence.email}}
+                        #email="ngModel"
+                        [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                    />
+                    <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                        <div *ngIf="email.errors['required']">Email est obligatoire</div>
+                        <div *ngIf="email.errors['email']">
+                        Donnez une adresse email valide
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row1">   
+                    <div class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-key"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="matricule"
+                            placeholder="Matricule"
+                            [(ngModel)]="agence.matricule"
+                            required
+                            #matricule="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && matricule.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="matricule.errors && f.submitted">
+                            <div *ngIf="matricule.errors['required']">Matricule est obligatoire</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="fal fa-map-marked-alt"></i>
+                        </span>
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="address"
+                            [(ngModel)]="form.address"
+                            required
+                            #address="ngModel"
+                            placeholder={{agence.address}}
+                            [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="address.errors && f.submitted">
+                            <div *ngIf="address.errors['required']">address est obligatoire</div>
+                        </div>
+                    </div>
+                </div>     
+                <div *ngIf="role ==='AGENCE'" [ngStyle]="{ 'margin-top': !activated ? '55px' : '0' }" class="file">
+                    <div  *ngIf="!activated" >
+                        <app-file-upload></app-file-upload>
+                    </div> 
+                    </div>
+                </div>
+
+                <!--Form expert-->
+                <div *ngIf="role==='EXPERT'" class="expert">
+                    <div class="row1">
+                        <div class="form-group flex" >
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-user"></i>
+                            </span>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="nom"
+                                [(ngModel)]="expert.name"
+                                required
+                                
+                                placeholder="Nom"
+                                #name="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+                            />
+                            <div class="invalid-feedback" *ngIf="name.errors && f.submitted">
+                                <div *ngIf="name.errors['required']">Nom est Obligatoire</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group flex">
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-envelope"></i>
+                            </span>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="email"
+                                [(ngModel)]="expert.email"
+                                required
+                                minlength="4"
+                                maxlength="20"
+                                placeholder="email"
+                                #email="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+                            />
+                            <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                                <div *ngIf="email.errors['required']">Email est obligatoire</div>
+                                <div *ngIf="email.errors['email']">
+                                Email non Validé
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row1">
+                        <div class="form-group flex" >
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-map-marked-alt"></i>
+                            </span>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="address"
+                                [(ngModel)]="expert.address"
+                                required
+                                minlength="4"
+                                maxlength="20"
+                                placeholder="address"
+                                #address="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && address.errors }"
+                            />
+                            <div class="invalid-feedback" *ngIf="address.errors && f.submitted">
+                                <div *ngIf="address.errors['required']">address est obligatoire</div>
+                                <div *ngIf="address.errors['minlength']">
+                                Adresse doit comporter au minimum 4 caracteres
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group flex">
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-phone-alt"></i>
+                            </span> 
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="tel"
+                                [(ngModel)]="expert.tel"
+                                required
+                                placeholder="Num Tél"
+                                minlength="8"
+                                #tel="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && tel.errors }"
+                            />
+                            <div class="invalid-feedback" *ngIf="tel.errors && f.submitted">
+                                <div *ngIf="tel.errors['required']">Numéro Tél est obligatoire</div>
+                            </div>
+                            </div>
+                        </div>
+
+                </div>
+                <!--Form Admin-->
+                <div *ngIf="role==='ADMIN'" class="ADMIN">
+                    <div class="row1">
+                        <div class="form-group flex" >
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-user"></i>
+                            </span>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name="nom"
+                                [(ngModel)]="adminFullName"
+                                required
+                                
+                                placeholder="Nom"
+                                #name="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && name.errors }"
+                            />
+                            <div class="invalid-feedback" *ngIf="name.errors && f.submitted">
+                                <div *ngIf="name.errors['required']">Nom est Obligatoire</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group flex">
+                            <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                                <i class="far fa-envelope"></i>
+                            </span>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="email"
+                                [(ngModel)]="adminEmail"
+                                required
+                                minlength="4"
+                                maxlength="20"
+                                placeholder="email"
+                                #email="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                            />
+                            <div class="invalid-feedback" *ngIf="email.errors && f.submitted">
+                                <div *ngIf="email.errors['required']">Email est obligatoire</div>
+                                <div *ngIf="email.errors['email']">
+                                Email non Validé
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group flex">
+                        <span class="note inline-flex items-center px-3 text-sm text-gray-900 bg-gray-200 border border-r-0 border-gray-300 rounded-l-md white:bg-gray-600 white:text-gray-400 white:border-gray-600">
+                            <i class="far fa-phone-alt"></i>
+                        </span> 
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="tel"
+                            [(ngModel)]="adminTel"
+                            required
+                            placeholder="Num Tél"
+                            minlength="8"
+                            #tel="ngModel"
+                            [ngClass]="{ 'is-invalid': f.submitted && tel.errors }"
+                        />
+                        <div class="invalid-feedback" *ngIf="tel.errors && f.submitted">
+                            <div *ngIf="tel.errors['required']">Numéro Tél est obligatoire</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block " (click)="onSubmit()">Sauvegarder</button>
+                </div>  
+            </form>
+            <div class="alert alert-success" *ngIf="isUpdated">
+                Votre compte est mise a jour !
+            </div>
+        </div>
+    </div>
+</div>

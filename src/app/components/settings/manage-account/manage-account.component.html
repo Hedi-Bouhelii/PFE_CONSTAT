@@ -1,0 +1,37 @@
+<div>
+  
+  <div class="form-group">
+    <select class="form-control" name="activated" [(ngModel)]="contrat.activated" required #agence="ngModel">
+      <option selected value="true">Activer</option>
+      <option value="false">Desactiver</option>
+    </select>
+    
+  </div>
+
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      name="refContrat"
+      [(ngModel)]="contrat.refContrat"
+      required
+      placeholder="reference contrat"
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="date"
+      class="form-control"
+      name="dateExpiration"
+      ngModel
+      [(ngModel)]="contrat.dateExpiration"
+      required
+      placeholder="Date d'expiration"
+      (onchange)="testAhmed()"
+    />
+  </div>
+       <button mat-raised-button color="primary"  (click)="sendContractDetails()" class="mx-auto mt-6">Sauvegarder</button>
+   
+</div>

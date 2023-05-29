@@ -1,0 +1,80 @@
+<table class="agence p-4 sm:ml-64 w-2/3 mx-auto relative overflow-x-auto shadow-md sm:rounded-lg w-full text-sm text-left text-gray-500 white:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 white:bg-gray-700 white:text-gray-400">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                id 
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+                Date de Creation
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+                Etat
+            </th>
+
+            <th scope="col" class="px-6 py-3">
+                Voir Constat
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-white border-b white:bg-gray-800 white:border-gray-700 hover:bg-gray-50 white:hover:bg-gray-600">
+            <td class="px-6 py-4">
+                {{user.id}}
+            </td>
+            <td class="px-6 py-4">
+                {{formattedDate}}
+            </td>
+            <td class="px-6 py-4">
+                <div class="accepted">
+                    <span>
+                        Confirmé
+                    </span>
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                <button (click)="openConstatPDF()" mat-raised-button color="primary" >Voir Constat</button>
+            </td>
+        </tr>
+        <tr class="bg-white border-b white:bg-gray-800 white:border-gray-700 hover:bg-gray-50 white:hover:bg-gray-600">
+            <td class="px-6 py-4">
+                
+            </td>
+            <td class="px-6 py-4">
+                {{formattedDate}}
+            </td>
+            <td class="px-6 py-4">
+                <div class="refused">
+                    <span >
+                        Refusé
+                    </span>
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                <button (click)="openConstatPDF()" mat-raised-button color="primary" >Voir Constat</button>
+            </td>
+        </tr>
+
+        <tr class="bg-white border-b white:bg-gray-800 white:border-gray-700 hover:bg-gray-50 white:hover:bg-gray-600">
+            <td class="px-6 py-4">
+                7
+            </td>
+            <td class="px-6 py-4">
+                {{formattedDate}}
+            </td>
+            <td class="px-6 py-4">
+                <div class="accepted">
+                    <span >
+                        Confirmé
+                    </span>
+                </div>
+            </td>
+            <td class="px-6 py-4">
+                <button (click)="openConstatPDF()" mat-raised-button color="primary" >Voir Constat</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+<router-outlet name="historyBoard"></router-outlet>

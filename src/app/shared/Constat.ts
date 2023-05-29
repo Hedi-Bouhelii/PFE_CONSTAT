@@ -1,0 +1,28 @@
+export class Constat {
+    date?:string;
+    lieu?:string;
+    demandeur?:string;
+    agenceA?:string;
+    agenceB?:string;
+    intervenantNomCompletA?:string;
+    intervenantAdresseA?:string;
+    intervenantAdresseB?:string;
+    intervenantTelA?:number;
+    intervenantTelB?:number;
+    vehiculeMatA?:string;
+    vehiculeMatB?:string
+    numVINA?:string;
+    numVINB?:string;
+    debDirectionA?:string;
+    finDirectionA?:string;
+    debDirectionB?:string;
+    finDirectionB?:string;
+    degatsMatA?:string;
+    degatsMatB?:string;
+    temoinNomCompletA?:string;
+    temoinAdresseA?:string;
+    temoinTelA?:number;
+    temoinNomCompletB?:string;
+    temoinAdresseB?:string;
+    temoinTelB?:number;
+}

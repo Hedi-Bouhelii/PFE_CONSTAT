@@ -1,0 +1,61 @@
+<div *ngIf="!sent" class="card">
+    <form  #f="ngForm"
+    (ngSubmit)="onSend()">
+        <div class="form-group">
+            <label for="email">Envoyer Votre Email</label>
+            <input
+              type="text"
+              class="form-control"
+              name="email"
+              [(ngModel)]="form.email"
+              required
+              #email="ngModel"
+            />
+            <div *ngIf="email.errors && f.submitted" class="invalid-feedback">
+              email is required!
+            </div>
+          </div>
+          <button mat-raised-button>Envoyer</button>
+         
+    </form>
+</div>
+<div *ngIf="sent" class="card">
+    <form  #f="ngForm"
+    (ngSubmit)="onReset()">
+          <div class="form-group">
+            <label for="email">Token </label>
+            <input
+              type="text"
+              class="form-control"
+              name="token"
+              [(ngModel)]="formReset.token"
+              required
+              #token="ngModel"
+              
+            />
+            <div *ngIf="token.errors && f.submitted" class="invalid-feedback">
+                token est obligatoire
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Nouvelle Mot de Passe</label>
+            <input
+              type="text"
+              class="form-control"
+              name="email"
+              [(ngModel)]="formReset.password"
+              required
+              #password="ngModel"
+              
+            />
+            <div *ngIf="password.errors && f.submitted" class="invalid-feedback">
+                mot de passe est obligatoire
+            </div>
+          </div>
+
+          
+
+          <button mat-raised-button>Envoyer</button>
+          
+    </form>
+</div>

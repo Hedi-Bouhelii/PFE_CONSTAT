@@ -1,0 +1,130 @@
+#third-page{
+    height: 700px;
+    background-color: #EAF3FA;
+}
+.container-fluid{
+    display: flex;
+    position: relative;
+    top: 45px
+}
+::ng-deep .snack {
+    background-color: #7499f1 !important;
+    color: #eaf3fa; /* Replace with your desired background color */
+  }
+.submit-container{
+    padding: 17px;
+    border-radius: 7px;
+    width: 495px;
+    height: 478px;
+    margin-left: 10%;
+    position: relative;
+    top: 99px;
+    background-color: #FFFF;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.submit-container h1{
+    text-align: center;
+    margin-bottom: 35px;
+    margin-top: 25px;
+    font-size: 30px;
+    color: #2B468B;
+    font-weight: 650;
+}
+
+.submit-container input{
+    padding: 15px;
+    margin-top: 25px;
+    width: 80%;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    background-color: #EAF3FA;
+    border: 1px solid #AECDFB !important;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.submit-container textarea{
+    padding: 15PX;
+    margin-top: 25px;
+    background-color: #e0e9fa;
+    border: 1px #e0e9fa;
+    border-radius: 25px;
+    font-size: 20px;
+    background-color: #EAF3FA;
+    border: 1px solid #AECDFB !important;
+    border-radius: 5px;
+    width: 80%;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.submit-btn{
+    margin-top: 5%;
+    background-color: #2B468B;
+    color: #FFFF;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+    padding: 0px 45px;
+    margin-top: 15px;
+    font-size: 15px;
+
+}
+
+
+.info-container{
+    margin-left: 10%;
+    width: 550px;
+}
+.info-container h1{
+    font-family: Montserrat, sans-serif;
+    padding-bottom: 20px;
+    font-size: 30px;
+}
+
+.info-container p{
+    padding-bottom: 20px;
+    font-size: 20px;
+}
+
+.info-container .info-ico{
+    display: flex;
+    font-family: microsoft yahei;
+    font-size: 15px;
+}
+
+.info-container .info-ico span{
+    margin-right: 10px;
+    margin-bottom: 15px;
+    color: #776DEB;
+    font-size: 1.7rem;
+}
+
+.social-media-container{
+  background-color: #2B468B;
+  height: 200px;
+}
+
+.social-media-container i{
+    color: #FFFF;
+    margin-right: 20px;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+img{
+    width: ;
+}
+::placeholder{
+    color: #2B468B;
+}
+.fonts{
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+    position: relative;
+    top: 125px;
+}
